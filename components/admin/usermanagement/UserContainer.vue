@@ -1,5 +1,6 @@
 <template>
   <div class="pa-10">
+    
     <v-dialog v-model="isOpen" width="1000" persistent>
      <v-card >
       <!-- <div

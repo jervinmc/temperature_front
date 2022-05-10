@@ -233,7 +233,7 @@ export default {
         function (data) {
           this.temperature = data.temp;
           this.eventsGetall();
-          if (data.temp > 30) {
+          if (data.temp > 38) {
             this.isOpen = true;
             this.$axios
               .post(

@@ -1,6 +1,74 @@
 <template>
 
   <div class="pa-10">
+     <v-dialog v-model="isOpen" width="1000" persistent>
+      <v-card class="pa-10">
+        <div align="center" class="text-h6">Track Record</div>
+        <v-col cols="12" class="px-0">
+          <div>Lastname</div>
+          <div>
+            <v-text-field outlined v-model="events.lastname"></v-text-field>
+          </div>
+        </v-col>
+        <v-col cols="12" class="px-0">
+          <div>Firstname</div>
+          <div>
+            <v-text-field outlined v-model="events.firstname"></v-text-field>
+          </div>
+        </v-col>
+        <v-col cols="12" class="px-0">
+          <div>Address</div>
+          <div>
+            <v-text-field outlined v-model="events.address"></v-text-field>
+          </div>
+        </v-col>
+        <v-col cols="12" class="px-0">
+          <div>Age</div>
+          <div>
+            <v-textarea outlined v-model="events.age"></v-textarea>
+          </div>
+        </v-col>
+        <v-col cols="12" class="px-0">
+          <div>Gender</div>
+          <div>
+            <v-select
+              outlined
+              v-model="events.gender"
+              :items="['Male', 'Female']"
+            ></v-select>
+          </div>
+        </v-col>
+        <v-col cols="12" class="px-0">
+          <div>Temperature</div>
+          <div>
+            <v-text-field outlined v-model="events.temp"></v-text-field>
+          </div>
+        </v-col>
+         <v-col cols="12" class="px-0">
+          <div>Status</div>
+          <div>
+            <v-select :items="['No COVID','Active','Recovered','Expired']" outlined v-model="events.status"></v-select>
+          </div>
+        </v-col>
+        <v-card-actions>
+          <v-row align="center">
+            <v-col align="end">
+              <v-btn color="red" text @click="isOpen = false"> Cancel </v-btn>
+            </v-col>
+            <v-col>
+              <v-btn
+                color="success"
+                text
+                @click="addEvents"
+                :loading="buttonLoad"
+              >
+                Save
+              </v-btn>
+            </v-col>
+          </v-row>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
        <v-dialog v-model="isOpen" width="1000" persistent>
     <v-card class="pa-10">
       <div align="center" class="text-h6">Residents List</div>
@@ -62,6 +130,9 @@
          <div class="text-h6">
           <b>Residents List</b>
       </div>
+       <div align="start">
+          <v-btn depressed color="#4b49ac" dark @click="isOpen=true" :loading="isLoaded"> Add Record </v-btn>
+        </div>
      <v-row class="py-10">
          <v-col align="center" @click="route('usermanagement')" >
             <v-card color="#00cec9" height="150" width="300" elevation="2" align="center" style="cursor:pointer">
@@ -181,6 +252,7 @@ export default {
         this.eventsGetall()
     },
     methods:{
+   
      async addEvents(){
          this.buttonLoad = true
             const response = await this.$axios
@@ -197,7 +269,9 @@ export default {
               },
             })
             .then(() => {
-              this.buttonLoad = false;
+               alert('Successfully Added')
+          this.buttonLoad = false;
+          this.isOpen=false
              
             });
         },
@@ -255,6 +329,8 @@ export default {
     },
     data(){
         return {
+          isLoaded:false,
+          isOpen:false,
             buttonLoad:false,
             isOpen:false,
             events:[],
