@@ -10,7 +10,7 @@
       </v-sheet>
     </v-img>
    <div align="center">
-     <hero-about />
+     <!-- <hero-about /> -->
     </div>
   <footer-all />
   </v-container>
