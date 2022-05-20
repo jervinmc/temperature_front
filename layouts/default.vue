@@ -50,18 +50,6 @@
         ><v-icon class="pb-1">mdi-home</v-icon>Home</v-toolbar-title
       >
       <v-toolbar-title
-        class="px-4 black--text"
-        style="cursor: pointer; font-size: 16px"
-        @click="route('contacts')"
-        ><v-icon class="pb-1">mdi-phone</v-icon> Contact us</v-toolbar-title
-      >
-      <v-toolbar-title
-        class="px-4 black--text"
-        style="cursor: pointer; font-size: 16px"
-        @click="route('about')"
-        ><v-icon class="pb-1">mdi-information</v-icon> About us</v-toolbar-title
-      >
-      <v-toolbar-title
         v-if="token == null"
         class="px-4 black--text"
         style="cursor: pointer; font-size: 16px"
@@ -345,7 +333,7 @@ export default {
           this.total_unseen = this.total_unseen.length
         });
     },
-    pusherConnect(){
+  pusherConnect(){
       var pusher = new Pusher('33efacb6a0d9c7baad00', {
       cluster: 'ap1'
     });

@@ -43,7 +43,7 @@
       <div class="pa-5" align="start">
         <v-img src="temp_logo.png"></v-img>
         <div class="text-h6">
-          COVID-19 Barangay Monitoring
+         Covid-19 Sterling Manors Subdivision Monitoring
         </div>
         <div>
           Sign in to continue
@@ -94,7 +94,9 @@ export default {
         var response = await this.$axios
           .post("login", credentials)
           .then((response) => {
-         
+            console.log(response.data)
+   
+            localStorage.setItem('account_type',response.data['account_type'])
             if(response.data['status']=='400'){
                 alert('Wrong Credentials')
                 this.isLoaded=false;

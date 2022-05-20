@@ -72,7 +72,7 @@
       <b>Temperature</b>
     </div>
     <v-row class="py-10">
-      <v-col align="start" @click="route('cases')">
+      <v-col align="start">
         <v-card
           class="rounded-xl"
           color="#0984e3"
@@ -235,21 +235,7 @@ export default {
           this.eventsGetall();
           if (data.temp > 38) {
             this.isOpen = true;
-            this.$axios
-              .post(
-                `/notification`,
-                {
-                  title: `New high temp detected ! ${data.temp}`,
-                },
-                {
-                  headers: {
-                    Authorization: `Bearer ${localStorage.getItem("token")}`,
-                  },
-                }
-              )
-              .then(() => {
-                this.buttonLoad = false;
-              });
+           
           }
           this.events.temp = data.temp;
         },
@@ -261,7 +247,9 @@ export default {
     return {
       buttonLoad: false,
       isOpen: false,
-      events: [],
+      events:{
+        address:"blk1 lot 35 sterling manors subd. Anabu 1-c"
+      },
       items_all: [],
       temperature: 0,
       headers: [

@@ -8,20 +8,9 @@
           </div>
           <div class="text-h5 white--text ">
             <b>
-              Summer Release<br />
-              2022
+              Sterling Manors Subdivision<br />
+
             </b>
-          </div>
-          <div class="my-10 white--text">
-            <v-btn
-              depressed
-              color="#6609af"
-              dark
-              @click="goToMarket"
-    
-            >
-              Sign Up Now
-            </v-btn>
           </div>
         </v-col>
         <v-col>

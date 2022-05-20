@@ -69,7 +69,7 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-       <v-dialog v-model="isOpen" width="1000" persistent>
+       <!-- <v-dialog v-model="isOpen" width="1000" persistent>
     <v-card class="pa-10">
       <div align="center" class="text-h6">Residents List</div>
       <v-col cols="12" class="px-0">
@@ -126,7 +126,7 @@
         </v-row>
       </v-card-actions>
     </v-card>
-  </v-dialog>
+  </v-dialog> -->
          <div class="text-h6">
           <b>Residents List</b>
       </div>
@@ -134,7 +134,7 @@
           <v-btn depressed color="#4b49ac" dark @click="isOpen=true" :loading="isLoaded"> Add Record </v-btn>
         </div>
      <v-row class="py-10">
-         <v-col align="center" @click="route('usermanagement')" >
+         <v-col align="center"  >
             <v-card color="#00cec9" height="150" width="300" elevation="2" align="center" style="cursor:pointer">
                 <v-icon size="60" color="white">mdi-account-multiple</v-icon>
                 <div class="text-h6 white--text">
@@ -145,7 +145,7 @@
                 </div>
             </v-card>
          </v-col>
-         <v-col align="center" @click="route('cases')" >
+         <v-col align="center"  >
                <v-card color="#0984e3" height="150" width="300" elevation="2" align="center" style="cursor:pointer">
                 <v-icon size="60" color="white">mdi-text-box-search-outline</v-icon>
                 <div class="text-h6 white--text" >
@@ -156,7 +156,7 @@
                 </div>
             </v-card>
          </v-col>
-         <v-col align="center" @click="route('donate')" >
+         <v-col align="center" >
                <v-card color="#a29bfe" height="150" width="300" elevation="2" align="center" style="cursor:pointer">
                 <v-icon size="60" color="white">mdi-text-box-search-outline</v-icon>
                 <div class="text-h6 white--text">

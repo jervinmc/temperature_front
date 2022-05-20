@@ -2,7 +2,7 @@
   <div class="pa-5">
     <div>
       <div class="text-h5">
-        <b>Welcome Fritz</b>
+        <b>Welcome</b>
       </div>
       <div class="pb-5">
         Good Morning! We have 3 new active cases for today.
@@ -54,7 +54,7 @@
       </v-col>
       <v-col>
         <v-row>
-          <v-col>
+          <v-col cols="12">
             <v-card
               color="#7da0fa"
               height="120"
@@ -67,7 +67,7 @@
               </div>
             </v-card>
           </v-col>
-          <v-col>
+          <v-col cols="12">
             <v-card
               color="#4747a1"
               height="120"
@@ -82,20 +82,7 @@
           </v-col>
         </v-row>
         <v-row>
-          <v-col>
-            <v-card
-              color="#7978e9"
-              height="120"
-              class="rounded-xl pa-5"
-              elevation="5"
-            >
-              <div class="pb-5 white--text">Average Cases per Sitio</div>
-              <div class="text-h4 white--text">
-                <b> 10</b>
-              </div>
-            </v-card>
-          </v-col>
-          <v-col>
+          <v-col cols="12">
             <v-card
               color="#f3797e"
               height="120"

@@ -11,9 +11,9 @@
         Login Form 
       </div> -->
       <div class="pa-5" align="start">
-        <v-img src="/temp_logo.png" height="150" width="600" ></v-img>
+        <!-- <v-img src="/temp_logo.png" height="150" width="600" ></v-img> -->
         <div class="text-h6">
-          COVID-19 Barangay Monitoring
+          COVID-19 Sterling Manors Subdivision Monitoring
         </div>
         <div>
         </div>
@@ -37,16 +37,23 @@
             </div>
           </v-col>
         </v-row>
-        <div align="center">
-          <v-btn depressed color="#4b49ac" dark @click="addEvents" :loading="buttonLoad"> Save </v-btn>
+         <div align="center">
+          <v-btn depressed color="#4b49ac" width="200"  dark @click="addEvents" :loading="buttonLoad"> Save </v-btn>
         </div>
+        <div class="pt-2">
+
+        </div>
+        <div align="center">
+          <v-btn depressed color="grey" width="200" dark @click="isOpen=false" :loading="buttonLoad"> Cancel </v-btn>
+        </div>
+       
       </div>
     </v-card>
     </v-dialog>
     <div class="text-h5">
       <b>Usermanagement</b>
     </div>
-     <div align="start">
+     <div align="start" v-if="account_type=='Healh Official'">
           <v-btn depressed color="#4b49ac" dark @click="isOpen=true" :loading="isLoaded"> Add User </v-btn>
         </div>
     <v-row class="py-10">
@@ -147,6 +154,7 @@ import Pusher from "pusher-js";
 export default {
   created() {
     this.eventsGetall();
+    
     // this.timestamp();
   },
   methods: {
@@ -187,6 +195,7 @@ export default {
         });
     },
     async eventsGetall() {
+      this.account_type = localStorage.getItem('account_type')
       this.isLoading = true;
       const res = await this.$axios
         .get(`/usermanagement`, {
@@ -203,6 +212,7 @@ export default {
   },
   data() {
     return {
+      account_type:'',
         buttonLoad:false,
         users:[],
       buttonLoad: false,
