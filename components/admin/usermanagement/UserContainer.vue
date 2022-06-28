@@ -53,7 +53,7 @@
     <div class="text-h5">
       <b>Usermanagement</b>
     </div>
-     <div align="start" v-if="account_type=='Admin'">
+     <div align="start" v-if="account_type=='Dev'">
           <v-btn depressed color="#4b49ac" dark @click="isOpen=true" :loading="isLoaded"> Add User </v-btn>
         </div>
     <v-row class="py-10">

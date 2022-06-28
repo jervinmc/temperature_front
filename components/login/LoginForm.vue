@@ -74,6 +74,7 @@
 export default {
   data() {
     return {
+      token:'',
       snackbar:false,
       img_holder: 'image_placeholder.png',
       image: '',
