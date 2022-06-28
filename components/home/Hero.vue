@@ -4,7 +4,7 @@
       <v-row>
         <v-col cols="8">
           <div class="text-h2 white--text">
-            <b>Temperature Monitioring</b>
+            <b>Temperature Monitoring</b>
           </div>
           <div class="text-h5 white--text ">
             <b>
