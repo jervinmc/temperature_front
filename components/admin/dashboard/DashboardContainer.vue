@@ -46,7 +46,7 @@
          <v-col cols="12" class="px-0">
           <div>Status</div>
           <div>
-            <v-select :items="['No COVID','Active','Recovered','Expired']" outlined v-model="events.status"></v-select>
+            <v-select :items="['No COVID','Active','Recovered','Deceased']" outlined v-model="events.status"></v-select>
           </div>
         </v-col>
         <v-card-actions>

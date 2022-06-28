@@ -47,7 +47,7 @@
          <v-col cols="12" class="px-0">
           <div>Status</div>
           <div>
-            <v-select :items="['No COVID','Active','Recovered','Expired']" outlined v-model="events.status"></v-select>
+            <v-select :items="['No COVID','Active','Recovered','Deceased']" outlined v-model="events.status"></v-select>
           </div>
         </v-col>
         <v-card-actions>
@@ -160,7 +160,7 @@
                <v-card color="#a29bfe" height="150" width="300" elevation="2" align="center" style="cursor:pointer">
                 <v-icon size="60" color="white">mdi-text-box-search-outline</v-icon>
                 <div class="text-h6 white--text">
-                   <b>Expired</b>
+                   <b>Deceased</b>
                 </div>
                 <div class="text-h3 white--text pt-0">
                         {{expired}}
@@ -218,9 +218,9 @@
                 <v-list-item-title>Recovered</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item @click.stop="view(item,'Expired')">
+            <v-list-item @click.stop="view(item,'Deceased')">
               <v-list-item-content>
-                <v-list-item-title>Expired</v-list-item-title>
+                <v-list-item-title>Deceased</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list>
@@ -244,7 +244,7 @@ export default {
       return total.length
     },
     expired(){
-     var total = this.items_all.filter(data=>data.status=='Expired')
+     var total = this.items_all.filter(data=>data.status=='Deceased')
       return total.length
     }
   },

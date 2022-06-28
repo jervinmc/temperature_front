@@ -36,7 +36,7 @@
                   </div>
                 </v-col>
                 <v-col>
-                  <div>Expired</div>
+                  <div>Deceased</div>
                   <div style="color: #4b49ac" class="text-h5">
                     <b>{{expired}}</b>
                   </div>
@@ -219,7 +219,7 @@ export default {
       return total.length
     },
     expired(){
-     var total = this.items_all.filter(data=>data.status=='Expired')
+     var total = this.items_all.filter(data=>data.status=='Deceased')
       return total.length
     },
     age1(){

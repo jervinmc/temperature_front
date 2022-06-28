@@ -27,7 +27,7 @@
           <v-col>
             <div>Account Type</div>
             <div>
-              <v-select outlined :items="['Barangay Official','Health Official','Dev']" v-model="users.account_type"></v-select>
+              <v-select outlined :items="['Barangay Official','Barangay Captain','Dev']" v-model="users.account_type"></v-select>
             </div>
           </v-col>
           <v-col cols="12">
@@ -53,7 +53,7 @@
     <div class="text-h5">
       <b>Usermanagement</b>
     </div>
-     <div align="start" v-if="account_type=='Healh Official'">
+     <div align="start" v-if="account_type=='Admin'">
           <v-btn depressed color="#4b49ac" dark @click="isOpen=true" :loading="isLoaded"> Add User </v-btn>
         </div>
     <v-row class="py-10">
